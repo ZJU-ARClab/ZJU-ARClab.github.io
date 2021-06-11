@@ -1,29 +1,38 @@
-
+<!DOCTYPE html>
 <html>
- 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>系统时间</title>
+  <title>Bootstrap 实例</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
- 
 <body>
-    <script>
-        Date.prototype.format = function (fmt) {
-            var o = {
-                "y+": this.getFullYear, //年
-                "M+": this.getMonth() + 1, //月份
-                "d+": this.getDate(), //日
-                "h+": this.getHours(), //小时
-                "m+": this.getMinutes(), //分
-                "s+": this.getSeconds() //秒
-            };
-            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-            for (var k in o)
-                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-            return fmt;
-        }
-        setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
-    </script>
- 
-    <div id="dateTime"></div>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>我的第一个 Bootstrap 页面</h1>
+    <p>重置窗口大小，查看响应式效果！</p> 
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>第一列</h3>
+      <p>学的不仅是技术，更是梦想！</p>
+      <p>再牛逼的梦想,也抵不住你傻逼似的坚持！</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>第二列</h3>
+      <p>学的不仅是技术，更是梦想！</p>
+      <p>再牛逼的梦想,也抵不住你傻逼似的坚持！</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>第三列</h3>        
+      <p>学的不仅是技术，更是梦想！</p>
+      <p>再牛逼的梦想,也抵不住你傻逼似的坚持！</p>
+    </div>
+  </div>
+</div>
+
 </body>
+</html>
